@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service_interface>
+  <action name="Call">
+    <parameters>
+      <parameter predicate="contact_name" format="value"/>
+      <parameter predicate="contact_number" format="value"/>
+    </parameters>
+    <failure_reasons/>
+    <target>
+      <http endpoint="http://http-service/call"/>
+    </target>
+  </action>
+
+  <query name="asking_for_phone_number">
+    <parameters>
+      <parameter predicate="contact_name" format="value"/>
+      <parameter predicate="contact_number" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://http-service/asking_for_phone_number"/>
+    </target>
+  </query>
+</service_interface>
+
