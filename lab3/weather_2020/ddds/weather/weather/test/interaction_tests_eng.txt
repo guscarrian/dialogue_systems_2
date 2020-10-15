@@ -1,0 +1,21 @@
+--- main menu
+S> What would you like to do?
+
+--- check weather (example)
+S> What would you like to do?
+U> what is the temperature?
+S> What city?
+U> London
+S> What country?
+U> UK
+S> The temperature is *
+
+# The wildcard "*" in the last system utterance makes it 
+possible to do tests even though the information in the API changes over time.
+
+--- Example: temperature given country
+S> What would you like to do?
+U> what is the temprature today in England?
+S> What city?
+U> London
+S> The temperature is *

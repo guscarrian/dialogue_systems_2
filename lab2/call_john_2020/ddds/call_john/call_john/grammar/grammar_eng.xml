@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+  <action name="top">
+    <one-of>
+      <item>main menu</item>
+      <item>top</item>
+      <item>beginning</item>
+      <item>cancel</item>
+      <item>forget it</item>
+      <item>never mind</item>
+      <item>abort</item>
+    </one-of>
+  </action>
+
+  <action name="up">
+    <one-of>
+      <item>up</item>
+      <item>back</item>
+      <item>go back</item>
+    </one-of>
+  </action>
+
+
+  <action name="call">
+    <one-of>
+      <item>call</item>
+      <item>make a call</item>
+      <item>call<slot predicate="contact_name" type="individual"/></item>
+      <item>call<slot predicate="contact_name" type="individual"/><slot predicate="contact_number" type="individual"/></item>
+      <item>I'd like to call<slot predicate="contact_name" type="individual"/></item>
+      <item>I want to call<slot predicate="contact_name" type="individual"/></item>
+    </one-of>
+  </action>
+
+  <!-- QUESTIONS -->
+  <!--El usuario pregunta por el número de teléfono de un contacto X. El nombre del contacto es un slot, y el tipo de teléfono (work, home, mobile...) es otro slot). -->
+    
+  <question speaker="system" type="wh_question">What would you like to do</question>
+
+  <question speaker="user" predicate="asking_for_phone_number" type="wh_question">
+    <one-of>
+      <item>I want to know a contact's number</item>
+      <item>what is<slot predicate="contact_name" type="individual"/><slot predicate="contact_number" type="individual"/></item>
+      <item>what is<slot predicate="contact_name" type="individual"/>number</item>
+      <item>what is<slot predicate="contact_name" type="individual"/><slot predicate="contact_number" type="individual"/>number</item>
+    </one-of>
+  </question>
+
+<!-- Both the user and the system can use this phrase to ask about a contact's phone number. Example:
+U: What is Mary's phone number?
+When returning to discussing this question after talking about something else, the system can say "Returning to the contact's phone number". -->
+  <question speaker="all" predicate="asking_for_phone_number" type="wh_question">the contact's phone number</question>
+
+  <question speaker="system" predicate="contact_name" type="wh_question">Which contact</question>
+
+  <question speaker="system" predicate="contact_number" type="wh_question">Which phone</question>
+
+  <question speaker="system" predicate="contact_name" type="alt_question">Do you want to call or know the contact's phone number</question>
+
+
+  <!-- ANSWERS -->
+
+  <answer speaker="system" predicate="asking_for_phone_number">It's<slot predicate="asking_for_phone_number"/></answer>
+
+
+  <!-- REPORTS -->
+
+  <report action="Call" status="ended">Calling<slot predicate="contact_name"/>'s<slot predicate="contact_number"/></report>
+
+
+  <!-- INDIVIDUALS -->
+  <!-- Definition of individuals that allow the system and user to speak about individuals -->
+  <individual name="contact_john">
+    <one-of>
+      <item>John</item>
+      <item>john</item>
+      <item>John's</item>
+      <item>john's</item>
+    </one-of>
+  </individual>
+
+  <individual name="contact_mary">
+    <one-of>
+      <item>Mary</item>
+      <item>Mary's</item>
+    </one-of>
+  </individual>
+
+
+  <individual name="mobile">
+    <one-of>
+      <item>mobile</item>
+      <item>mobile phone</item>
+      <item>mobile number</item>
+    </one-of>
+  </individual>
+
+  <individual name="work">
+    <one-of>
+      <item>work</item>
+      <item>work phone</item>
+      <item>work number</item>
+    </one-of>
+  </individual>
+
+  <individual name="home">
+    <one-of>
+      <item>home</item>
+      <item>home phone</item>
+      <item>home number</item>
+    </one-of>
+  </individual>  
+
+</grammar>
