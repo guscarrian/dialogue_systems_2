@@ -3,13 +3,18 @@
 
   <sort name="city" dynamic="true"/>
   <sort name="country" dynamic="true"/>
+  <sort name="unit"/>
 
   <predicate name="city_to_search" sort="city"/>
   <predicate name="country_to_search" sort="country"/>
   <predicate name="temperature" sort="string"/>
   <predicate name="weather" sort="string"/>
+  <predicate name="which_unit" sort="unit"/>
 
   <individual name="city_london" sort="city"/>
   <individual name="country_uk" sort="country"/>
+  <individual name="standard" sort="unit"/>
+  <individual name="metric" sort="unit"/>
+  <individual name="imperial" sort="unit"/>
 
 </ontology>

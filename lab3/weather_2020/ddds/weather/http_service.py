@@ -80,12 +80,13 @@ def validator_response(is_valid):
     return response
 
 
-def get_data(city,country, unit="metric"):
+def get_data(city,country, unit="metric", key="9c08aee1ac3508a4c27588f75945025c"):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&APPID={key}"
     print(url)
     request = Request(url)
     response = urlopen(request)
     data = response.read()
+
     return json.loads(data)
 
 
@@ -143,4 +144,14 @@ def temperature():
     temp = data['main']['temp']
     tempstr = str(temp)
     return query_response(value=tempstr, grammar_entry=None)
-    
+
+
+@app.route("/weather", methods=['POST'])
+def weather():
+    payload = request.get_json()
+    city = payload["context"]["facts"]["city_to_search"]["grammar_entry"]
+    country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]
+    data = get_data(city, country)
+    temp = data['main']['temp']
+    tempstr = str(temp)
+    return query_response(value=tempstr, grammar_entry=None)

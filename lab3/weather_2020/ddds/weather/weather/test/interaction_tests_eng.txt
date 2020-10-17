@@ -1,21 +1,115 @@
 --- main menu
 S> What would you like to do?
 
---- check weather (example)
+--- TEMPERATURE INTERACTION TESTS:
+
+--- checking TEMPERATURE - INCREMENTAL(example from instructions)
 S> What would you like to do?
-U> what is the temperature?
-S> What city?
+U> what is the temperature
+S> Which city?
 U> London
-S> What country?
+S> Which country?
 U> UK
 S> The temperature is *
 
-# The wildcard "*" in the last system utterance makes it 
-possible to do tests even though the information in the API changes over time.
 
---- Example: temperature given country
+--- checking TEMPERATURE given CITY - INCREMENTAL
 S> What would you like to do?
-U> what is the temprature today in England?
-S> What city?
+U> what is the temperature today in London
+S> Which country?
+U> UK
+S> The temperature is *
+
+
+--- checking TEMPERATURE given COUNTRY - INCREMENTAL
+S> What would you like to do?
+U> what is the temperature today in UK
+S> Which city?
 U> London
 S> The temperature is *
+
+
+--- checking TEMPERATURE given ALL information - ONE SHOT
+S> What would you like to do?
+U> I'd like to know the temperature in London in UK
+S> The temperature is *
+
+
+--- WEATHER INTERACTION TESTS:
+
+--- checking WEATHER - INCREMENTAL
+S> What would you like to do?
+U> what is the weather like
+S> Which city?
+U> London
+S> Which country?
+U> UK
+S> It's *
+
+
+--- checking WEATHER given CITY - INCREMENTAL
+S> What would you like to do?
+U> what is the weather like today in London
+S> Which country?
+U> UK
+S> It's *
+
+
+--- checking WEATHER given COUNTRY - INCREMENTAL
+S> What would you like to do?
+U> what is the weather like today in UK
+S> Which city?
+U> London
+S> It's *
+
+
+--- checking WEATHER given ALL information - ONE SHOT
+S> What would you like to do?
+U> I'd like to know the weather in London in UK
+S> It's *
+
+
+
+--- checking TEMPERATURE selecting UNIT TYPE - INCREMENTAL
+S> What would you like to do?
+U> what is the temperature in Celsius
+S> Which city?
+U> London
+S> Which country?
+U> UK
+S> The temperature is *
+
+
+--- checking TEMPERATURE selecting UNIT TYPE (given CITY)- INCREMENTAL
+S> What would you like to do?
+U> what is the temperature in Celsius in London
+S> Which country?
+U> UK
+S> The temperature is *
+
+--- checking TEMPERATURE selecting UNIT TYPE (given COUNTRY)- INCREMENTAL
+S> What would you like to do?
+U> what is the temperature in Celsius in the UK
+S> Which city?
+U> London
+S> The temperature is *
+
+
+--- checking TEMPERATURE selecting UNIT TYPE - ONE SHOT
+S> What would you like to do?
+U> what is the temperature in Celsius in London in UK
+S> The temperature is *
+
+
+
+--- What's the temperature outside?
+--- What's the temperature?
+--- What's the temperature today?
+--- How's the weather today in ...?
+--- How's the weather today in ... in ...?
+
+--- What's the weather like?
+--- How's the weather?
+--- How's the weather today in ...?
+--- How's the weather today in ... in ...?
+--- How is the weather? 

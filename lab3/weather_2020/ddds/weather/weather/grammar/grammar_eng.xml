@@ -22,7 +22,57 @@
   </action>
 
 
-  <!-- INDIVIDUALS -->
+  <!-- QUESTIONS -->
+
+  <question speaker="system" type="goal">What would you like to do?</question>
+
+  <question speaker="user" predicate="temperature" type="wh_question">
+    <one-of>
+      <item>what is the temperature today in <slot predicate="city_to_search"/></item>
+      <item>what is the temperature today in <slot predicate="country_to_search"/></item>
+      <item>I'd like to know the temperature in <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+      <item>What is the temperature</item>
+      <item>what is the temperature</item>
+      <item>what is the temperature in <slot predicate="which_unit"/></item>
+      <item>what is the temperature in <slot predicate="which_unit"/> in <slot predicate="city_to_search"/></item>
+      <item>what is the temperature in <slot predicate="which_unit"/> in <slot predicate="country_to_search"/></item>
+      <item>what is the temperature in <slot predicate="which_unit"/> in <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+      <item>what is the temperature in <slot predicate="which_unit"/> in <slot predicate="country_to_search"/> in <slot predicate="city_to_search"/></item>
+    </one-of>
+  </question>
+
+
+  <question speaker="system" predicate="country_to_search" type="wh_question">Which country</question>
+
+  <question speaker="system" predicate="city_to_search" type="wh_question">Which city</question>
+
+  <question speaker="system" predicate="which_unit" type="wh_question">which unit</question>
+
+  <question type="wh_question" speaker="all" predicate="temperature">temperature</question>
+
+  <question type="wh_question" speaker="all" predicate="weather">weather</question>
+
+
+  <question speaker="user" predicate="weather" type="wh_question">
+    <one-of>
+      <item>What is the weather like</item>
+      <item>what is the weather like</item>
+      <item>What is the weather like today in <slot predicate="city_to_search"/></item>
+      <item>What is the weather like today in <slot predicate="country_to_search"/></item>
+      <item>I'd like to know the weather in <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
+    </one-of>
+  </question>
+  
+
+  <!-- ANSWERS -->
+  <answer speaker="system" predicate="temperature"> The temperature is <slot predicate="temperature"/></answer>
+
+  
+  <answer speaker="system" predicate="weather"> It's <slot predicate="weather"/></answer>
+  
+
+
+ <!-- INDIVIDUALS -->
   <individual name="city_london">London</individual>
   
   <individual name="country_uk">
@@ -33,29 +83,27 @@
   </individual>
 
 
-
-  <!-- QUESTIONS -->
-
-  <question speaker="user" predicate="temperature" type="wh_question">
+  <individual name="standard">
     <one-of>
-      <item>What is the temperature</item>
+      <item>Kelvin</item>
+      <item>kelvin</item>
     </one-of>
-  </question>
+  </individual>
 
-  <!--
-  <question speaker="user" predicate="weather" type="wh_question">
+
+  <individual name="metric">
     <one-of>
-      <item>What is the temperature</item>
+      <item>Celsius</item>
+      <item>celsius</item>
     </one-of>
-  </question>
-  -->
+  </individual>
 
-  <!-- ANSWERS -->
-  <answer speaker="system" predicate="temperature">The temperature is <slot predicate="temperature"/></answer>
 
-  <!--
-  <answer speaker="system" predicate="weather">It's <slot predicate="weather"/></answer>
-  -->
-
+  <individual name="imperial">
+    <one-of>
+      <item>Fahrenheit</item>
+      <item>fahrenheit</item>
+    </one-of>
+  </individual>
 
 </grammar>

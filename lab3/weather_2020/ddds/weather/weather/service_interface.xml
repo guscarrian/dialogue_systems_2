@@ -5,6 +5,7 @@
     <parameters>
       <parameter predicate="country_to_search" format="grammar_entry"/>
       <parameter predicate="city_to_search" format="grammar_entry"/>
+      <parameter predicate="which_unit" format="grammar_entry" optional="true"/>
     </parameters>
     <target>
       <http endpoint="http://http-service/temperature"/>
@@ -21,5 +22,6 @@
       <http endpoint="http://http-service/weather"/>
     </target>
   </query>
+
 
 </service_interface>
