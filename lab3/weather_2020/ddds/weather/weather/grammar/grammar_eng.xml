@@ -24,14 +24,12 @@
 
   <!-- QUESTIONS -->
 
-  <question speaker="system" type="goal">What would you like to do?</question>
 
   <question speaker="user" predicate="temperature" type="wh_question">
     <one-of>
       <item>what is the temperature today in <slot predicate="city_to_search"/></item>
       <item>what is the temperature today in <slot predicate="country_to_search"/></item>
       <item>I'd like to know the temperature in <slot predicate="city_to_search"/> in <slot predicate="country_to_search"/></item>
-      <item>What is the temperature</item>
       <item>what is the temperature</item>
       <item>what is the temperature in <slot predicate="which_unit"/></item>
       <item>what is the temperature in <slot predicate="which_unit"/> in <slot predicate="city_to_search"/></item>
@@ -48,14 +46,13 @@
 
   <question speaker="system" predicate="which_unit" type="wh_question">which unit</question>
 
-  <question type="wh_question" speaker="all" predicate="temperature">temperature</question>
+  <question type="wh_question" speaker="all" predicate="temperature">the temperature</question>
 
-  <question type="wh_question" speaker="all" predicate="weather">weather</question>
+  <question type="wh_question" speaker="all" predicate="weather">the current weather</question>
 
 
   <question speaker="user" predicate="weather" type="wh_question">
     <one-of>
-      <item>What is the weather like</item>
       <item>what is the weather like</item>
       <item>What is the weather like today in <slot predicate="city_to_search"/></item>
       <item>What is the weather like today in <slot predicate="country_to_search"/></item>
@@ -73,20 +70,56 @@
 
 
  <!-- INDIVIDUALS -->
-  <individual name="city_london">London</individual>
-  
-  <individual name="country_uk">
+ <!-- countries -->
+   <individual name="country_uk">
     <one-of>
       <item>UK</item>
       <item>the UK</item>
     </one-of>
   </individual>
 
+  <individual name="country_sweden">Sweden</individual>
+  <individual name="country_spain">Spain</individual>
+  <individual name="country_italy">Italy</individual>
+  <individual name="country_france">France</individual>
+  <individual name="country_russia">Russia</individual>
+  <individual name="country_scotland">Scotland</individual>
+  <individual name="country_ireland">Ireland</individual>
 
+  <individual name="country_usa">
+    <one-of>
+      <item>USA</item>
+      <item>the US</item>
+      <item>US</item>
+      <item>United States</item>
+      <item>the united states</item>
+      <item>the states</item>
+      <item>United States of America</item>
+    </one-of>
+  </individual>
+
+
+  <!-- cities -->
+  <individual name="city_london">London</individual>
+  <individual name="city_gothenburg">Gothenburg</individual>
+  <individual name="city_lund">Lund</individual>
+  <individual name="city_malaga">Malaga</individual>
+  <individual name="city_venice">Venice</individual>
+  <individual name="city_toulouse">Toulouse</individual>
+  <individual name="city_moscow">Moscow</individual>
+  <individual name="city_edinburgh">Edinburgh</individual>
+  <individual name="city_cork">Cork</individual>
+  <individual name="city_honolulu">Honolulu</individual>
+ 
+
+  
+
+  <!-- units -->
   <individual name="standard">
     <one-of>
       <item>Kelvin</item>
       <item>kelvin</item>
+      <item>standard</item>
     </one-of>
   </individual>
 
@@ -95,6 +128,7 @@
     <one-of>
       <item>Celsius</item>
       <item>celsius</item>
+      <item>metric</item>
     </one-of>
   </individual>
 
@@ -103,6 +137,7 @@
     <one-of>
       <item>Fahrenheit</item>
       <item>fahrenheit</item>
+      <item>imperial</item>
     </one-of>
   </individual>
 

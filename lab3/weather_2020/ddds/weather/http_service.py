@@ -137,13 +137,37 @@ def action_success_response():
 
 @app.route("/temperature", methods=['POST'])
 def temperature():
+  #with app.test_request_context():
     payload = request.get_json()
+    print(f"payload: {payload}")
+    #print(dir(payload))
     city = payload["context"]["facts"]["city_to_search"]["grammar_entry"]
     country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]
-    data = get_data(city, country)
+    unit = payload['request']['parameters']['which_unit']
+
+
+    if unit != None:
+      unit = payload['request']['parameters']['which_unit']['value']
+      data = get_data(city, country, unit)
+
+
+    else:
+      data = get_data(city, country)
+      unit = "metric"
+
+    all_units = {"standard" : "kelvin", "imperial" : "fahrenheit", "metric" : "celsius"}
+    unit = all_units[unit]
+
     temp = data['main']['temp']
-    tempstr = str(temp)
-    return query_response(value=tempstr, grammar_entry=None)
+    temp_str = str(temp)
+
+    feels_like = data['main']['feels_like']
+    feels_like_str = str(feels_like)
+
+    weather_state = temp_str + " degrees " + unit + " but it feels like " + feels_like_str  
+
+    return query_response(value=weather_state, grammar_entry=None)
+  
 
 
 @app.route("/weather", methods=['POST'])
@@ -152,6 +176,8 @@ def weather():
     city = payload["context"]["facts"]["city_to_search"]["grammar_entry"]
     country = payload["context"]["facts"]["country_to_search"]["grammar_entry"]
     data = get_data(city, country)
-    temp = data['main']['temp']
-    tempstr = str(temp)
-    return query_response(value=tempstr, grammar_entry=None)
+
+    weather = data['weather'][0]['description']
+    weather_str = str(weather)
+
+    return query_response(value=weather_str, grammar_entry=None)

@@ -4,7 +4,6 @@
   <goal type="perform" action="top">
     <plan>
       <forget_all/>
-      <findout type="goal"/>
       <findout type="alt_question">
         <alt>
           <resolve type="wh_question" predicate="temperature"/>

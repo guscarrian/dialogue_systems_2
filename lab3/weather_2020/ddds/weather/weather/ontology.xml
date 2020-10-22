@@ -11,8 +11,32 @@
   <predicate name="weather" sort="string"/>
   <predicate name="which_unit" sort="unit"/>
 
-  <individual name="city_london" sort="city"/>
+  <!-- COUNTRIES -->
   <individual name="country_uk" sort="country"/>
+  <individual name="country_sweden" sort="country"/>
+  <individual name="country_spain" sort="country"/>
+  <individual name="country_italy" sort="country"/>
+  <individual name="country_france" sort="country"/>
+  <individual name="country_russia" sort="country"/>
+  <individual name="country_scotland" sort="country"/>
+  <individual name="country_ireland" sort="country"/>
+  <individual name="country_usa" sort="country"/>
+
+
+  <!-- CITIES -->
+  <individual name="city_london" sort="city"/>
+  <individual name="city_gothenburg" sort="city"/>
+  <individual name="city_lund" sort="city"/>
+  <individual name="city_malaga" sort="city"/>
+  <individual name="city_venice" sort="city"/>
+  <individual name="city_toulouse" sort="city"/>
+  <individual name="city_moscow" sort="city"/>
+  <individual name="city_edinburgh" sort="city"/>
+  <individual name="city_cork" sort="city"/>
+  <individual name="city_honolulu" sort="city"/>
+
+
+  <!-- UNITS -->
   <individual name="standard" sort="unit"/>
   <individual name="metric" sort="unit"/>
   <individual name="imperial" sort="unit"/>
