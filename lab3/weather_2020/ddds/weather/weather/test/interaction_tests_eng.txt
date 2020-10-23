@@ -114,7 +114,7 @@ S> It's *
 
 --- adding "thanks" and misspelling "tempreture"
 S> Do you want to know the temperature or know the current weather?
-U> what is the tempreture in Sweden
+U> I'd like to know the tempreture in Sweden thanks
 S> Which city?
 U> Gothenburg
 S> The temperature is *
