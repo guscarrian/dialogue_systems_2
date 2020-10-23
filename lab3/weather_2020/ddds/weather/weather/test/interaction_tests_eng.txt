@@ -1,7 +1,6 @@
 --- main menu
 S> Do you want to know the temperature or know the current weather?
 
---- TEMPERATURE INTERACTION TESTS:
 
 --- checking TEMPERATURE - INCREMENTAL(example from instructions)
 S> Do you want to know the temperature or know the current weather?
@@ -35,7 +34,6 @@ U> I'd like to know the temperature in London in UK
 S> The temperature is *
 
 
---- WEATHER INTERACTION TESTS:
 
 --- checking WEATHER - INCREMENTAL
 S> Do you want to know the temperature or know the current weather?
@@ -87,6 +85,7 @@ S> Which country?
 U> UK
 S> The temperature is *
 
+
 --- checking TEMPERATURE selecting UNIT TYPE (given COUNTRY)- INCREMENTAL
 S> Do you want to know the temperature or know the current weather?
 U> what is the temperature in fahrenheit in the UK
@@ -100,6 +99,7 @@ S> Do you want to know the temperature or know the current weather?
 U> what is the temperature in Celsius in London in UK
 S> The temperature is *
 
+
 --- adding "what's" and misspelling "temparature" for RASA
 S> Do you want to know the temperature or know the current weather?
 U> what's the temparature in Celsius in London in UK
@@ -110,3 +110,11 @@ S> The temperature is *
 S> Do you want to know the temperature or know the current weather?
 U> I'd like to know the weahter in London in UK please
 S> It's *
+
+
+--- adding "thanks" and misspelling "tempreture"
+S> Do you want to know the temperature or know the current weather?
+U> what is the tempreture in Sweden
+S> Which city?
+U> Gothenburg
+S> The temperature is *

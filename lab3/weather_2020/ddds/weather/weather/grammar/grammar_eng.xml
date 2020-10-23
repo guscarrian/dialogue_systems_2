@@ -50,6 +50,11 @@
 
   <question type="wh_question" speaker="all" predicate="weather">the current weather</question>
 
+  <question speaker="system" predicate="temperature" type="wh_question">the temperature</question>
+
+  <question speaker="system" predicate="weather" type="wh_question">the current weather</question>
+
+
 
   <question speaker="user" predicate="weather" type="wh_question">
     <one-of>
