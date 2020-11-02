@@ -100,6 +100,7 @@ U> what is the temperature in Celsius in London in UK
 S> The temperature is *
 
 
+
 --- adding "what's" and misspelling "temparature" for RASA
 S> Do you want to know the temperature or know the current weather?
 U> what's the temparature in Celsius in London in UK
@@ -114,7 +115,8 @@ S> It's *
 
 --- adding "thanks" and misspelling "tempreture"
 S> Do you want to know the temperature or know the current weather?
-U> I'd like to know the tempreture in Sweden thanks
+U> what is the tempreture in Sweden
 S> Which city?
 U> Gothenburg
 S> The temperature is *
+
